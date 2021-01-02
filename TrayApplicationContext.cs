@@ -35,7 +35,7 @@ namespace InternetSwitcher
 
             _hook.RegisterHotKey(ModifierKeys.Control | ModifierKeys.Alt, Keys.F12);
             _hook.KeyPressed += (a, b) => ToggleRule();
-            
+
             SetStartup();
         }
 
@@ -148,7 +148,9 @@ namespace InternetSwitcher
         {
             //Set the application to run at startup
             var key = Registry.CurrentUser.OpenSubKey(StartupKey, true);
-            key?.SetValue(StartupValue, Application.ExecutablePath);
+            var executable = Process.GetCurrentProcess().MainModule?.FileName;
+            if (executable != null)
+                key?.SetValue(StartupValue, executable);
         }
     }
 }

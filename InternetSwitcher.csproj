@@ -3,10 +3,10 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>GTAV_Firewall_Switcher</RootNamespace>
+    <RootNamespace>InternetSwitcher</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyName>GTAV Firewall Switcher</AssemblyName>
-    <StartupObject>GTAV_Firewall_Switcher.Program</StartupObject>
+    <AssemblyName>Internet Switcher</AssemblyName>
+    <StartupObject>InternetSwitcher.Program</StartupObject>
     <ApplicationIcon>Resources\AppIcon.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>

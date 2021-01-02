@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GTAV_Firewall_Switcher
+namespace InternetSwitcher
 {
     internal static class Program
     {

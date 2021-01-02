@@ -1,5 +1,5 @@
 ﻿
-namespace GTAV_Firewall_Switcher
+namespace InternetSwitcher
 {
     partial class Form1
     {

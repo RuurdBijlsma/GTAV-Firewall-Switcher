@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace GTAV_Firewall_Switcher
+namespace InternetSwitcher
 {
     public sealed class KeyboardHook : IDisposable
     {

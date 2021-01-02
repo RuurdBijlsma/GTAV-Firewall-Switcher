@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace InternetSwitcher
 {
@@ -10,6 +11,9 @@ namespace InternetSwitcher
     {
         private static readonly NotifyIcon TrayIcon = new NotifyIcon();
         private readonly KeyboardHook _hook = new KeyboardHook();
+
+        private const string StartupKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+        private const string StartupValue = "InternetSwitcher";
 
         public TrayApplicationContext()
         {
@@ -31,6 +35,8 @@ namespace InternetSwitcher
 
             _hook.RegisterHotKey(ModifierKeys.Control | ModifierKeys.Alt, Keys.F12);
             _hook.KeyPressed += (a, b) => ToggleRule();
+            
+            SetStartup();
         }
 
         private static void ToggleRule()
@@ -136,6 +142,13 @@ namespace InternetSwitcher
             };
             process.Start();
             return process.StandardOutput.ReadToEnd();
+        }
+
+        private static void SetStartup()
+        {
+            //Set the application to run at startup
+            var key = Registry.CurrentUser.OpenSubKey(StartupKey, true);
+            key?.SetValue(StartupValue, Application.ExecutablePath);
         }
     }
 }

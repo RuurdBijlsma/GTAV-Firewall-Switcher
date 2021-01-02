@@ -9,6 +9,9 @@
     <StartupObject>InternetSwitcher.Program</StartupObject>
     <ApplicationIcon>Resources\AppIcon.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Company>Ruurd Inc.</Company>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>

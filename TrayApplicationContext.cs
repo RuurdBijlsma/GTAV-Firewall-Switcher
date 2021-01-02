@@ -20,8 +20,10 @@ namespace InternetSwitcher
             TrayIcon.Icon = Properties.Resources.AppIcon;
             TrayIcon.Text = "Internet Switcher";
             var contextMenuStrip = new ContextMenuStrip();
-            ToolStripItem infoItem = new ToolStripMenuItem("Ctrl + Alt + F12 to toggle");
-            infoItem.Enabled = false;
+            ToolStripItem infoItem = new ToolStripMenuItem("Ctrl + Alt + F12 to toggle")
+            {
+                Enabled = false
+            };
             ToolStripItem exitItem = new ToolStripMenuItem("Exit");
             exitItem.Click += Exit;
             ToolStripItem blockItem = new ToolStripMenuItem("Enable Internet");
